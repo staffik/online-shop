@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="/w3.css">
+    <title>Orders</title>
+</head>
+<body>
+    <% include navbar %>
+
+    <div id="orders" class="w3-container">
+        <h3> Orders </h3>
+        <div class="w3-row-padding">
+            <% orders.forEach( order => { %>
+                <div class="w3-col s4 w3-center w3-card-2">
+                    <p>User: <%= order.user %> </p>
+                    <a href="/show_order?id=<%= order._id %>&user=<%= order.user %>" class="w3-btn w3-green"> More </a>
+                    <a href="/delete_order?id=<%= order._id %>" class="w3-btn w3-green"> Delete </a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+</body>
+</html>

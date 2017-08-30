@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="/w3.css">
+    <title>Cart</title>
+</head>
+<body>
+    <% include navbar %>
+
+    <div id="items">
+        <% if(items.length > 0) { %>
+            <% var cost = 0; %>
+            <% items.forEach( item => { %>
+                <% cost += Number(item.price); %>
+                <% include thumb %>
+            <% }) %> <br>
+        <% }  %>
+    </div>
+
+    <div class="w3-row w3-container">
+    <div class="w3-col s6 w3-center">
+        <% if(items.length > 0) { %>
+            <p class="w3-btn w3-green" style="width:80%">Cost: <%= cost %> </p>
+        <% } else { %>
+            <p class="w3-btn w3-green" style="width:80%">Empty cart!<p>
+        <% }  %>
+    </div>
+    <div class="w3-col s6 w3-center">
+        <p><a href="/payment" class="w3-btn w3-green" style="width:80%">Payment</a></p>
+    </div>
+    </div>
+    
+</body>
+</html>

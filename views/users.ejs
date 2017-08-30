@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="/w3.css">
+    <title>Users</title>
+</head>
+<body>
+    <% include navbar %>
+
+    <div id="users" class="w3-container">
+        <h3> Users </h3>
+        <div class="w3-row-padding">
+            <% users.forEach( user => { %>
+                <div class="w3-col s4 w3-center w3-card-2">
+                    <p>Nick: <%= user.nick %> </p>
+                    <p>Password: <%= user.pwd %></p>
+                    <a href="/delete_user?nick=<%= user.nick %>" class="w3-btn w3-green"> Delete </a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    
+</body>
+</html>

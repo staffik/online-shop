@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="/w3.css">
+    <title>Order</title>
+</head>
+<body>
+    <% include navbar %>
+
+    <div class="w3-container">
+        <div class="w3-panel w3-border w3-grey w3-round-large">
+            <p>Order of user: <%= user %></p>
+        </div>
+        <div class="w3-panel w3-border w3-grey w3-round-large">
+            <p>Status: <%= order.status %></p>
+        </div>
+        <div class="w3-panel w3-border w3-grey w3-round-large">
+            <p>Credit card number: <%= order.ccn %></p>
+        </div>
+        <div class="w3-panel w3-border w3-grey w3-round-large">
+            <p>Address: <%= order.addr %></p>
+        </div>
+    </div>
+
+    <div id="items" class="w3-container">
+        <h3>Items</h3>
+        <% var cost = 0; %>
+        <% if(items.length > 0) { %>
+            <% items.forEach( item => { %>
+                <% cost += Number(item.price); %>
+                <% include thumb %>
+            <% }) %>
+            <p class="w3-btn w3-green">Cost: <%= cost %> $<p>
+        <% } else { %>
+            <p class="w3-btn w3-green">Empty order!<p>
+        <% } %>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" href="/w3.css">
+    <title>Add item</title>
+</head>
+<body>
+    <% include navbar %>    
+
+    <form class="w3-container w3-card-4" action="/add_item" method="post">
+        <h3>Add new item</h3>
+        <div class="w3-half">
+            <label class="w3-text-grey">Name</label>
+            <input class="w3-input w3-border" type="text" name="name">
+        </div>
+            <div class="w3-half">    
+            <label class="w3-text-grey">Price</label>
+            <input class="w3-input w3-border" type="number" name="price" min="0" max="10000" step="0.01">
+        </div>
+        <div>      
+            <label class="w3-text-grey">Description</label>
+            <textarea class="w3-input w3-border" name="desc" style="resize:none"></textarea>
+        </div>
+        <div>      
+            <label class="w3-text-grey">Image</label>
+            <input class="w3-input w3-border" type="text" name="img">
+        </div>
+        <p><button type="submit" class="w3-btn w3-padding w3-green" style="width:120px">Send &nbsp; ❯</button></p>
+    </form>
+
+</body>
+</html>
